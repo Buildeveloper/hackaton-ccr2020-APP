@@ -83,6 +83,8 @@ class UserRepository implements IUserRepository {
 
     if (logged == null) logged = false;
 
+    print("Logged: $logged");
+
     return Future.value(logged);
   }
 

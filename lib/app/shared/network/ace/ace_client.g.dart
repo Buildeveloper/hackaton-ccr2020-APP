@@ -9,7 +9,7 @@ part of 'ace_client.dart';
 class _AceClient implements AceClient {
   _AceClient(this._dio, {this.baseUrl}) {
     ArgumentError.checkNotNull(_dio, '_dio');
-    this.baseUrl ??= 'https://agile-ridge-84357.herokuapp.com/';
+    this.baseUrl ??= 'https://agile-ridge-84357.herokuapp.com';
   }
 
   final Dio _dio;

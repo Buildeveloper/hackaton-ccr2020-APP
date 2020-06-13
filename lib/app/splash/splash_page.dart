@@ -21,11 +21,15 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   void initState() {
-    super.initState();
     disposer = autorun((_) {
+      print("RUN");
       final auth = Modular.get<AuthController>();
-      auth.isUserLogged().then((logged) => _checkUserLogged(logged));
-    }, delay: 5000);
+      auth.isUserLogged().then((logged) => {
+        print("LOGGED"),
+        _checkUserLogged(logged),
+      });
+    }, delay: 2000);
+    super.initState();
   }
 
   @override
