@@ -46,7 +46,6 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
       child: Scaffold(
         //resizeToAvoidBottomInset: false,
         body: Container(
-          color: AppColors.PRIMARY_COLOR,
           child: Padding(
             padding: EdgeInsets.all(25),
             child: Center(
@@ -58,7 +57,6 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           DefaultImageView(
-                            color: AppColors.ICONS_COLOR,
                             resourceName: Resources.LOGO,
                           ),
                           Divider(color: Colors.transparent, height: 50),
@@ -81,7 +79,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                             text: "Quero fazer parte",
                             onPressed: () =>
                                 Modular.to.pushNamed(Routes.REGISTER),
-                            customColor: AppColors.WHITE,
+                            customColor: AppColors.ACCENT_COLOR,
                             customTextColor: AppColors.PRIMARY_COLOR,
                           ),
                         ],

@@ -17,7 +17,7 @@ class DefaultButton extends StatelessWidget {
     this.height = 40.0,
     this.onPressed,
     this.enabled = true,
-    this.customColor = AppColors.ACCENT_COLOR,
+    this.customColor = AppColors.PRIMARY_COLOR,
     this.customTextColor = AppColors.WHITE,
     this.padding,
     this.backgroundColor

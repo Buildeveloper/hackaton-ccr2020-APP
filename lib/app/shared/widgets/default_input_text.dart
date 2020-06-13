@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ace/app/shared/constants/colors.dart' as AppColors;
 
-
 class DefaultInputText extends StatelessWidget {
   final String labelText;
   final FocusNode focusNode;
@@ -69,14 +68,17 @@ class DefaultInputText extends StatelessWidget {
     return InputDecoration(
         enabledBorder: UnderlineInputBorder(
           borderSide: staticBottom
-              ? BorderSide(color: Theme.of(context).accentColor)
-              : BorderSide(color: Theme.of(context).primaryColorLight),
+              ? BorderSide(color: AppColors.PRIMARY_COLOR)
+              : BorderSide(color: AppColors.PRIMARY_COLOR),
         ),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: AppColors.WHITE),
         ),
         labelText: labelText,
-        labelStyle:
-            TextStyle(color: AppColors.WHITE, fontSize: 22, fontWeight: FontWeight.bold));
+        labelStyle: TextStyle(
+          color: AppColors.PRIMARY_COLOR,
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+        ));
   }
 }
