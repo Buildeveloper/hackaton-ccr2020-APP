@@ -10,8 +10,10 @@ import 'package:ace/app/shared/constants/resources.dart' as Resources;
 import 'package:ace/app/shared/widgets/default_button.dart';
 import 'package:ace/app/shared/widgets/keyboard_dismiss.dart';
 import 'components/login_widgets.dart';
+
 class LoginPage extends StatefulWidget {
   final String title;
+
   const LoginPage({Key key, this.title = "Login"}) : super(key: key);
 
   @override
@@ -51,41 +53,44 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
             child: Center(
               child: SingleChildScrollView(
                   child: new Stack(
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          DefaultImageView(
-                            resourceName: Resources.LOGO,
-                          ),
-                          Divider(color: Colors.transparent, height: 50),
-                          PhoneTextField(
-                              phoneController: phoneTextController, focus: focus),
-                          Divider(),
-                          PasswordTextField(
-                              focus: focus,
-                              passwordController: passwordTextController),
-                          Divider(),
-                          Divider(),
-                          DefaultButton(
-                            text: Strings.LOG_IN,
-                            onPressed: login,
-                          ),
-                          Divider(
-                            height: 5,
-                          ),
-                          DefaultButton(
-                            text: "Quero fazer parte",
-                            onPressed: () =>
-                                Modular.to.pushNamed(Routes.REGISTER),
-                            customColor: AppColors.ACCENT_COLOR,
-                            customTextColor: AppColors.PRIMARY_COLOR,
-                          ),
-                        ],
+                      DefaultImageView(
+                        resourceName: Resources.LOGO,
+                      ),
+                      Divider(color: Colors.transparent, height: 50),
+                      PhoneTextField(
+                          phoneController: phoneTextController, focus: focus),
+                      Divider(
+                        color: AppColors.TRANSPARENT,
+                      ),
+                      PasswordTextField(
+                          focus: focus,
+                          passwordController: passwordTextController),
+                      Divider(
+                        color: AppColors.TRANSPARENT,
+                        height: 20,
+                      ),
+                      DefaultButton(
+                        text: Strings.LOG_IN,
+                        onPressed: login,
+                      ),
+                      Divider(
+                        height: 5,
+                      ),
+                      DefaultButton(
+                        text: "Quero fazer parte",
+                        onPressed: () => Modular.to.pushNamed(Routes.PERSONAL_DATA),
+                        customColor: AppColors.ACCENT_COLOR,
+                        customTextColor: AppColors.PRIMARY_COLOR,
                       ),
                     ],
-                  )),
+                  ),
+                ],
+              )),
             ),
           ),
         ),

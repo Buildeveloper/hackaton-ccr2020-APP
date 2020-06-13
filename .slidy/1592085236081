@@ -1,0 +1,4 @@
+lib/app/modules/register/pages/pages_page.dart
+test/app/modules/register/pages/pages_page_test.dart
+lib/app/modules/register/pages/pages_controller.dart
+test/app/modules/register/pages/pages_controller_test.dart

@@ -61,7 +61,7 @@ class DefaultInputText extends StatelessWidget {
       return TextStyle(color: AppColors.HINT_TEXT_COLOR, fontSize: 20);
     }
 
-    return TextStyle(color: AppColors.LIGHT_TEXT_COLOR, fontSize: 20);
+    return TextStyle(color: AppColors.PRIMARY_COLOR, fontSize: 20);
   }
 
   InputDecoration _getDecoration(BuildContext context) {
