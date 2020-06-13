@@ -28,6 +28,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
   void login() {
 //    controller.login(
 //        context, phoneTextController.text, passwordTextController.text);
+    proceedToMenu();
   }
 
   @override
@@ -83,7 +84,8 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                       ),
                       DefaultButton(
                         text: "Quero fazer parte",
-                        onPressed: () => Modular.to.pushNamed(Routes.PERSONAL_DATA),
+                        onPressed: () =>
+                            Modular.to.pushNamed(Routes.PERSONAL_DATA),
                         customColor: AppColors.ACCENT_COLOR,
                         customTextColor: AppColors.PRIMARY_COLOR,
                       ),
