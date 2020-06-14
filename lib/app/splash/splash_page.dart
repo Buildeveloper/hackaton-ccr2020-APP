@@ -56,7 +56,7 @@ class _SplashPageState extends State<SplashPage> {
           Expanded(
             flex: 5,
             child: Container(
-              color: AppColors.ACCENT_COLOR,
+              color: AppColors.CANVAS_COLOR,
               height: double.maxFinite,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

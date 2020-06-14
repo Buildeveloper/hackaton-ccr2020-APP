@@ -35,4 +35,60 @@ class _AceClient implements AceClient {
     final value = AceResponse<User>.fromJson(_result.data);
     return value;
   }
+
+  @override
+  getMedicines(userId) async {
+    ArgumentError.checkNotNull(userId, 'userId');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final Response<Map<String, dynamic>> _result = await _dio.request(
+        '/medicines/$userId',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = AceResponse<List<Medicine>>.fromJson(_result.data);
+    return value;
+  }
+
+  @override
+  getMedicinesHistory(userId) async {
+    ArgumentError.checkNotNull(userId, 'userId');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final Response<Map<String, dynamic>> _result = await _dio.request(
+        '/medicines/$userId/historic',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = AceResponse<List<Medicine>>.fromJson(_result.data);
+    return value;
+  }
+
+  @override
+  getBenefits() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final Response<Map<String, dynamic>> _result = await _dio.request(
+        '/benefits',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = AceResponse<List<Benefit>>.fromJson(_result.data);
+    return value;
+  }
 }
