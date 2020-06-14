@@ -33,7 +33,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
 
   @override
   void proceedToMenu() {
-    Modular.to.pushReplacementNamed(Routes.HOME);
+    Modular.to.pushReplacementNamed(Routes.EXERCISES);
   }
 
   @override
