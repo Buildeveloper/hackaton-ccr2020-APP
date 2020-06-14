@@ -5,6 +5,8 @@ import 'package:ace/app/shared/widgets/default_input_text.dart';
 import 'package:flutter/material.dart';
 import 'package:ace/app/shared/constants/colors.dart' as AppColors;
 import 'package:ace/app/shared/constants/resources.dart' as Resources;
+import 'package:flutter_dialogflow/v2/auth_google.dart';
+import 'package:flutter_dialogflow/v2/dialogflow_v2.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
@@ -223,5 +225,13 @@ class _ChatbotPageState extends ModularState<ChatbotPage, ChatbotController> {
         ),
       ],
     );
+  }
+
+  Future _dialogFlowRequest({String query}) async {
+    AuthGoogle authGoogle = await AuthGoogle(fileJson: "assets/credentials.json").build();
+    Dialogflow dialogflow = Dialogflow(authGoogle: authGoogle, language: "pt-BR");
+    AIResponse response = await dialogflow.detectIntent(query);
+
+    return response;
   }
 }
