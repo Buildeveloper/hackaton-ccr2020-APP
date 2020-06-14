@@ -1,4 +1,6 @@
 //import 'package:ace/app/shared/models/body/login.dart';
+import 'package:ace/app/shared/network/bodies/login.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 import 'package:ace/app/shared/models/user/user.dart';
@@ -21,6 +23,6 @@ abstract class _AuthControllerBase with Store {
 
   Future<User> getLoggedUser() => _userRepository.getLoggedUser();
 
-//  Future<User> login(BuildContext context, Login login) =>
-//      _userRepository.login(context, login);
+  Future<User> login(BuildContext context, Login login) =>
+      _userRepository.login(context, login);
 }

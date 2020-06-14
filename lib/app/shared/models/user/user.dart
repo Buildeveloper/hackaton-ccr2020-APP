@@ -4,29 +4,30 @@ part 'user.g.dart';
 
 @JsonSerializable()
 class User {
-  String nome;
-  int id;
-  String token;
-  String email;
-  String celular;
-  String cpf;
-  int autorizado;
+  final int id;
+  final String firstName;
+  final String lastName;
+  final String cellphone;
+  final String birthDate;
+  final int points;
+  final String password;
 
-  User({
+  const User({
     this.id,
-    this.nome,
-    this.token,
-    this.email,
-    this.celular,
-    this.cpf,
-    this.autorizado
+    this.firstName,
+    this.lastName,
+    this.cellphone,
+    this.birthDate,
+    this.points,
+    this.password
   });
 
 
   @override
   String toString() {
-    return 'User{nome: $nome, id: $id, token: $token, email: $email, '
-        'celular: $celular, cpf: $cpf, autorizado: $autorizado}';
+    return 'User{id: $id, firstName: $firstName, lastName: $lastName, '
+        'cellphone: $cellphone, birthDate: $birthDate, points: $points, '
+        'password: $password}';
   }
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

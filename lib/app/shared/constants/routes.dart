@@ -6,3 +6,4 @@ const String HOME = "/home";
 const String REGISTER = "/register";
 const String PERSONAL_DATA = "/register/personal_data";
 const String TWO_AUTH = "$REGISTER/twoAuth";
+const String CHAT = "/chat";

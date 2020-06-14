@@ -1,6 +1,6 @@
+import 'package:ace/app/modules/auth/interfaces/ILoginView.dart';
 import 'package:ace/app/modules/auth/login_controller.dart';
 import 'package:ace/app/shared/constants/colors.dart' as AppColors;
-import 'package:ace/app/shared/widgets/clickable_text.dart';
 import 'package:ace/app/shared/widgets/default_image_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -20,15 +20,19 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends ModularState<LoginPage, LoginController> {
+class _LoginPageState extends ModularState<LoginPage, LoginController> implements ILoginView{
   final phoneTextController = TextEditingController();
   final passwordTextController = TextEditingController();
   final focus = FocusNode();
 
   void login() {
-//    controller.login(
-//        context, phoneTextController.text, passwordTextController.text);
-    proceedToMenu();
+    controller.login(phoneTextController.text, passwordTextController.text);
+  }
+
+  @override
+  void initState() {
+    controller.init(this, context);
+    super.initState();
   }
 
   @override

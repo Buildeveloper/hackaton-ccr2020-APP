@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:ace/app/shared/models/user/user.dart';
+import 'package:ace/app/shared/network/bodies/login.dart';
 import 'package:ace/app/shared/network/request_manager.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:ace/app/shared/models/user/user.dart';
 import 'package:ace/app/shared/network/api.dart';
 import 'package:ace/app/shared/repositories/user/user_repository_interface.dart';
 import 'package:ace/app/shared/repositories/storage/storage_manager_interface.dart';
@@ -19,23 +19,6 @@ class UserRepository implements IUserRepository {
     print("MAP: $userMap");
     final user = User.fromJson(userMap);
     return Future.value(user);
-  }
-
-  @override
-  Future<String> getToken() async {
-    return _storage.get("token").toString();
-  }
-
-  @override
-  Future<bool> registerToken(String token) async {
-    try {
-      await _storage.put("token", "bearer $token");
-      return Future.value(true);
-    } catch (e) {
-      print(e);
-    }
-
-    return Future.value(false);
   }
 
   @override
@@ -69,7 +52,6 @@ class UserRepository implements IUserRepository {
   Future<bool> registerUser(User user) async {
     try {
       await _storage.put("user", jsonEncode(user.toJson()));
-      await registerToken(user.token);
       return Future.value(true);
     } catch (e) {
       print(e);
@@ -88,7 +70,7 @@ class UserRepository implements IUserRepository {
     return Future.value(logged);
   }
 
-//  @override
-//  Future<User> login(BuildContext context, Login login) =>
-//      RequestManager.loadingRequest(context, _api.beople.login(login));
+  @override
+  Future<User> login(BuildContext context, Login login) =>
+      RequestManager.loadingRequest(context, _api.ace.loginUser(login));
 }

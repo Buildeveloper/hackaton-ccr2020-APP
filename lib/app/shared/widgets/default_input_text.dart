@@ -40,20 +40,21 @@ class DefaultInputText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-        readOnly: readOnly,
-        enabled: enabled,
-        onTap: onTap,
-        focusNode: focusNode,
-        controller: controller,
-        keyboardType: inputType,
-        autofocus: autoFocus,
-        textInputAction: textInputAction,
-        onFieldSubmitted: onFieldSubmitted,
-        maxLength: maxLength,
-        style: _getStyle(),
-        obscureText: obscureText,
-        onChanged: onChanged,
-        decoration: _getDecoration(context));
+      readOnly: readOnly,
+      enabled: enabled,
+      onTap: onTap,
+      focusNode: focusNode,
+      controller: controller,
+      keyboardType: inputType,
+      autofocus: autoFocus,
+      textInputAction: textInputAction,
+      onFieldSubmitted: onFieldSubmitted,
+      maxLength: maxLength,
+      style: _getStyle(),
+      obscureText: obscureText,
+      onChanged: onChanged,
+      decoration: _getDecoration(context),
+    );
   }
 
   TextStyle _getStyle() {

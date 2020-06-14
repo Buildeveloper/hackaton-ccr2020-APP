@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:ace/app/shared/constants/colors.dart' as AppColors;
 
-class CircleProgress extends CustomPainter{
-
+class CircleProgress extends CustomPainter {
   double currentProgress;
   double strokeWidth;
+  Color paintColor;
 
-  CircleProgress({this.currentProgress, this.strokeWidth = 10});
+  CircleProgress(
+      {this.currentProgress,
+      this.strokeWidth = 10,
+      this.paintColor = AppColors.ACCENT_COLOR});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -18,18 +21,20 @@ class CircleProgress extends CustomPainter{
 
     Paint completeArc = Paint()
       ..strokeWidth = strokeWidth
-      ..color = AppColors.ACCENT_COLOR
+      ..color = paintColor
       ..style = PaintingStyle.stroke
-      ..strokeCap  = StrokeCap.round;
+      ..strokeCap = StrokeCap.round;
 
-    Offset center = Offset(size.width/2, size.height/2);
-    double radius = min(size.width/2,size.height/2) - 10;
+    Offset center = Offset(size.width / 2, size.height / 2);
+    double radius = min(size.width / 2, size.height / 2) - 10;
 
-    canvas.drawCircle(center, radius, outerCircle); // this draws main outer circle
+    canvas.drawCircle(
+        center, radius, outerCircle); // this draws main outer circle
 
-    double angle = 2 * pi * (currentProgress/100);
+    double angle = 2 * pi * (currentProgress / 100);
 
-    canvas.drawArc(Rect.fromCircle(center: center,radius: radius), -pi/2, angle, false, completeArc);
+    canvas.drawArc(Rect.fromCircle(center: center, radius: radius), -pi / 2,
+        angle, false, completeArc);
   }
 
   @override

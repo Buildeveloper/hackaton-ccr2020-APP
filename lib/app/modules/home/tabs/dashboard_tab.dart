@@ -33,8 +33,8 @@ class DashBoardTab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 _buildTitle("Amigos"),
-                _buildFriend(context, "#1", "Tonhão Gabeira"),
-                _buildFriend(context, "#2", "ALice Rosa"),
+                _buildFriend(context, "#1", "Tonhão Gabeira", Resources.MOTORA),
+                _buildFriend(context, "#2", "ALice Rosa", Resources.WTRUCKER),
                 _buildMore(),
               ]),
         ),
@@ -148,13 +148,13 @@ class DashBoardTab extends StatelessWidget {
     );
   }
 
-  Widget _buildFriend(BuildContext context, String position, String name) {
+  Widget _buildFriend(BuildContext context, String position, String name, String resource) {
     final random = Random().nextInt(100).toDouble();
     return Row(
       children: <Widget>[
         Text(position),
         CircleImageView(
-          imagePath: Resources.MOTORA,
+          imagePath: resource,
           width: 50,
           height: 50,
           network: false,
@@ -238,7 +238,10 @@ class DashBoardTab extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[Text("Ver mais"), Icon(Icons.chevron_right)],
+      children: <Widget>[
+        Text("Ver mais"),
+        Icon(Icons.chevron_right),
+      ],
     );
   }
 }

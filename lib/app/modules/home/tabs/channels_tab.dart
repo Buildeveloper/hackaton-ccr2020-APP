@@ -1,4 +1,4 @@
-import 'package:ace/app/modules/home/models/channel.dart';
+import 'package:ace/app/shared/models/channel.dart';
 import 'package:flutter/material.dart';
 import 'package:ace/app/shared/constants/colors.dart' as AppColors;
 import 'package:ace/app/shared/constants/resources.dart' as Resources;

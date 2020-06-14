@@ -79,6 +79,8 @@ flutter:
     - pressure.png
     - pill.png
     - sleep.png
+    - wtrucker.png
+    - ace.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,5 +1,6 @@
 import 'package:ace/app/shared/widgets/circle_progress.dart';
 import 'package:flutter/material.dart';
+import 'package:ace/app/shared/constants/colors.dart' as AppColors;
 
 class CircleImageView extends StatefulWidget {
   final String imagePath;
@@ -36,8 +37,11 @@ class _CircleImageViewPageState extends State<CircleImageView> {
     return new Center(
       child: CustomPaint(
         foregroundPainter: CircleProgress(
-          currentProgress: widget.progress,
-          strokeWidth: widget.stokeWidth,
+            currentProgress: widget.progress,
+            strokeWidth: widget.stokeWidth,
+            paintColor: widget.stokeWidth > 0
+                ? AppColors.ACCENT_COLOR
+                : AppColors.TRANSPARENT
         ),
         child: Padding(
           padding: EdgeInsets.all(15.0),

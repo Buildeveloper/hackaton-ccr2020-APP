@@ -1,5 +1,6 @@
 import 'package:ace/app/app_controller.dart';
 import 'package:ace/app/modules/auth/auth_module.dart';
+import 'package:ace/app/modules/chatbot/chatbot_module.dart';
 import 'package:ace/app/modules/register/register_module.dart';
 import 'package:ace/app/shared/auth/auth_controller.dart';
 import 'package:ace/app/shared/network/ace/ace_api.dart';
@@ -38,6 +39,8 @@ class AppModule extends MainModule {
             module: AuthModule(), transition: TransitionType.scale),
         Router(Routes.REGISTER,
             module: RegisterModule(), transition: TransitionType.scale),
+        Router(Routes.CHAT,
+            module: ChatbotModule(), transition: TransitionType.scale),
       ];
 
   @override

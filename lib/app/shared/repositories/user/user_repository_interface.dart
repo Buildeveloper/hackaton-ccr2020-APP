@@ -1,5 +1,5 @@
-//import 'package:ace/app/shared/models/body/login.dart';
 import 'package:ace/app/shared/models/user/user.dart';
+import 'package:ace/app/shared/network/bodies/login.dart';
 import 'package:flutter/cupertino.dart';
 
 abstract class IUserRepository {
@@ -13,5 +13,5 @@ abstract class IUserRepository {
 
   Future<bool> isUserLogged();
 
-  //Future<User> login(BuildContext context, Login login);
+  Future<User> login(BuildContext context, Login login);
 }

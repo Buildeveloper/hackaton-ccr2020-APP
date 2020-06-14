@@ -1,0 +1,4 @@
+lib/app/modules/chatbot/chatbot/chatbot_page.dart
+test/app/modules/chatbot/chatbot/chatbot_page_test.dart
+lib/app/modules/chatbot/chatbot/chatbot_controller.dart
+test/app/modules/chatbot/chatbot/chatbot_controller_test.dart
