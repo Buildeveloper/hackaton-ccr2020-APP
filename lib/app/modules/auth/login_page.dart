@@ -1,14 +1,14 @@
 import 'package:ace/app/modules/auth/login_controller.dart';
 import 'package:ace/app/shared/constants/colors.dart' as AppColors;
-import 'package:ace/app/shared/widgets/clickable_text.dart';
-import 'package:ace/app/shared/widgets/default_image_view.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:ace/app/shared/constants/resources.dart' as Resources;
 import 'package:ace/app/shared/constants/routes.dart' as Routes;
 import 'package:ace/app/shared/constants/strings.dart' as Strings;
-import 'package:ace/app/shared/constants/resources.dart' as Resources;
 import 'package:ace/app/shared/widgets/default_button.dart';
+import 'package:ace/app/shared/widgets/default_image_view.dart';
 import 'package:ace/app/shared/widgets/keyboard_dismiss.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
 import 'components/login_widgets.dart';
 
 class LoginPage extends StatefulWidget {
@@ -84,8 +84,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                       ),
                       DefaultButton(
                         text: "Quero fazer parte",
-                        onPressed: () =>
-                            Modular.to.pushNamed(Routes.PERSONAL_DATA),
+                        onPressed: () => Modular.to.pushNamed(Routes.REGISTER),
                         customColor: AppColors.ACCENT_COLOR,
                         customTextColor: AppColors.PRIMARY_COLOR,
                       ),
