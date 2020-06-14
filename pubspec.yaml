@@ -65,6 +65,20 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - logo.png
+    - motora.jpg
+    - trophy.png
+    - cup-water.png
+    - dumbbell.png
+    - gift.png
+    - health.png
+    - home.png
+    - nutrition.png
+    - walk.png
+    - weight-lifter.png
+    - pound.png
+    - pressure.png
+    - pill.png
+    - sleep.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
