@@ -28,7 +28,7 @@ class _HomePageState extends ModularState<HomePage, HomeController>
   TabController _tabController;
   final healthItems = [
     new HealthItem(
-        resource: Resources.EXERCISE_MAN, title: "Meus exercícios", route: ""),
+        resource: Resources.EXERCISE_MAN, title: "Meus exercícios", route: Routes.EXERCISES),
     new HealthItem(resource: Resources.SLEEP, title: "Meu sono", route: ""),
     new HealthItem(
         resource: Resources.NUTRITION, title: "Minha alimentação", route: ""),

@@ -23,3 +23,5 @@ const String PILL = "pill.png";
 const String PRESSURE = "pressure.png";
 const String WTRUCKER = "wtrucker.png";
 const String ACE = "ace.png";
+const String EXERCISES = "exercise.png";
+const String CLOCK = "clock.png";
