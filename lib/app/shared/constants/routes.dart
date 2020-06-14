@@ -8,3 +8,4 @@ const String PERSONAL_DATA = "/register/personal_data";
 const String TWO_AUTH = "$REGISTER/twoAuth";
 const String CHAT = "/chat";
 const String EXERCISES = "/exercises";
+const String HEALTH_DATA = "/register/health_data";

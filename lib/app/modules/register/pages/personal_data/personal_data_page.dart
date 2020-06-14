@@ -1,7 +1,10 @@
 import 'package:ace/app/modules/register/pages/personal_data/personal_data_controller.dart';
 import 'package:ace/app/shared/constants/strings.dart' as Strings;
+import 'package:ace/app/shared/constants/routes.dart' as Routes;
+import 'package:ace/app/shared/constants/colors.dart' as AppColors;
 import 'package:ace/app/shared/widgets/default_button.dart';
 import 'package:ace/app/shared/widgets/default_input_text.dart';
+import 'package:ace/app/shared/widgets/keyboard_dismiss.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -32,6 +35,8 @@ class _PersonalDataPageState
   final birthDateTextController = TextEditingController();
   final passwordTextController = TextEditingController();
   final confirmPasswordTextController = TextEditingController();
+
+  double divider = 40;
 
   @override
   void dispose() {
@@ -70,13 +75,16 @@ class _PersonalDataPageState
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return KeyboardDismiss(child: Scaffold(
       bottomNavigationBar: Observer(
         builder: (_) {
           return DefaultButton(
             padding: EdgeInsets.all(15),
             text: Strings.PROCEED,
             enabled: controller.proceedEnabled,
+            onPressed: (){
+              Modular.to.pushNamed(Routes.HEALTH_DATA);
+            },
           );
         },
       ),
@@ -99,6 +107,7 @@ class _PersonalDataPageState
                   _validateFields();
                 },
               ),
+              Divider(color: AppColors.TRANSPARENT, height: divider,),
               DefaultInputText(
                 labelText: "Sobrenome",
                 textInputAction: TextInputAction.next,
@@ -110,6 +119,7 @@ class _PersonalDataPageState
                   _validateFields();
                 },
               ),
+              Divider(color: AppColors.TRANSPARENT, height: divider,),
               DefaultInputText(
                 labelText: "Celular",
                 textInputAction: TextInputAction.next,
@@ -121,6 +131,7 @@ class _PersonalDataPageState
                   _validateFields();
                 },
               ),
+              Divider(color: AppColors.TRANSPARENT, height: divider,),
               DefaultInputText(
                 labelText: "Email",
                 textInputAction: TextInputAction.next,
@@ -132,6 +143,7 @@ class _PersonalDataPageState
                   _validateFields();
                 },
               ),
+              Divider(color: AppColors.TRANSPARENT, height: divider,),
               DefaultInputText(
                 labelText: "Data de nascimento",
                 textInputAction: TextInputAction.next,
@@ -143,6 +155,7 @@ class _PersonalDataPageState
                   _validateFields();
                 },
               ),
+              Divider(color: AppColors.TRANSPARENT, height: divider,),
               DefaultInputText(
                 labelText: "Senha",
                 obscureText: true,
@@ -155,6 +168,7 @@ class _PersonalDataPageState
                   _validateFields();
                 },
               ),
+              Divider(color: AppColors.TRANSPARENT, height: divider,),
               DefaultInputText(
                 labelText: "Confirmar senha",
                 obscureText: true,
@@ -168,6 +182,6 @@ class _PersonalDataPageState
           ),
         ),
       ),
-    );
+    ),);
   }
 }
